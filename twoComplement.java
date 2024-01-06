@@ -11,8 +11,11 @@ public class twoComplement {
         System.out.print("Input_2: ");
         int y = sc.nextInt();
 
-        
-        calculate(x, y);
+        if (x + y < -128 || x + y > 127) {
+            System.out.println("ERROR");
+        } else {
+            calculate(x, y);
+        }
 
     }
 
@@ -113,14 +116,14 @@ public class twoComplement {
                     break;
                 }
             }
-            
+
             System.out.println("Add 1 into Input_2: " + Arrays.toString(box2));
         }
 
         System.out.println("Sum: " + constTotal);
 
-        //when sum < 0 rewrite SUM and Add one to SUM
-        if(constTotal<0){
+        // when sum < 0 rewrite SUM and Add one to SUM
+        if (constTotal < 0) {
             System.out.println("Sum is Negative value.");
             for (int i = 0; i < sumBox.length; i++) {
                 if (sumBox[i] == 0) {
@@ -129,7 +132,7 @@ public class twoComplement {
                     sumBox[i] = 0;
                 }
             }
-            //Add 1 to SUM
+            // Add 1 to SUM
             for (int i = sumBox.length - 1; i > 0; i--) {
                 if (sumBox[i] == 1) {
                     sumBox[i] = 0;
